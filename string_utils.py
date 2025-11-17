@@ -20,21 +20,19 @@ def split_before_each_uppercase(formula):
         return []
 
     results = []
-    current_chunk_start = 0
+    current_chunk = formula[0]
 
     for i in range (1, len(formula)):
         char = formula[i]
 
         if char.isupper():
-            chunk = formula[current_chunk_start:i]
-            if chunk:
-                results.append(chunk)
+            results.append(current_chunk)
+            current_chunk = char
+        else:
+            current_chunk += char
 
-            current_chunk_start = i
-
-    final_chunk = formula[current_chunk_start:]
-    if final_chunk:
-        results.append(final_chunk)
-
+    if current_chunk:
+        results.append(current_chunk)
+        
     return results
     

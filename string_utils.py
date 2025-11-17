@@ -9,10 +9,10 @@ def split_at_first_digit(formula):
         prefix += char
 
     if number_start_index == -1:
-        return formula, 1
-    else:
-        number_part = formula[number_start_index:]
-        return prefix, int(number_part)
+        return formula, 1   
+    
+    number_part = formula[number_start_index:]
+    return prefix, int(number_part)
 
 
 def split_before_each_uppercase(formula):

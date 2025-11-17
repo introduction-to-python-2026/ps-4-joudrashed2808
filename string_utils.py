@@ -1,4 +1,4 @@
-def split_before_each_uppercases(formula):
+def split_at_first_digit(formula):
     prefix = ""
     number_start_index = -1
 
@@ -15,7 +15,7 @@ def split_before_each_uppercases(formula):
         return prefix, int(number_part)
 
 
-def split_at_first_digit(formula):
+def split_before_each_uppercase(formula):
     if not formula:
         return []
 

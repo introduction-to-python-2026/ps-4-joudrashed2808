@@ -14,10 +14,12 @@ def split_at_first_digit(formula):
     number_part = formula[number_start_index:]
     return prefix, int(number_part)
 
-
-def split_before_each_uppercase(formula):
+def split_before_each_uppercases(formula):
     if not formula:
         return []
+
+    if not any(c.isupper() for c in formula):
+        return [formula]
 
     results = []
     current_chunk = formula[0]
@@ -31,8 +33,8 @@ def split_before_each_uppercase(formula):
         else:
             current_chunk += char
 
-    if current_chunk:
-        results.append(current_chunk)
+    
+    results.append(current_chunk)
         
     return results
     
